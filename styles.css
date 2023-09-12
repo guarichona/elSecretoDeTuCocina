@@ -1,79 +1,387 @@
-*{
-padding: 0;
-margin: 0;
-box-sizing: border-box;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-.contenedor{
-width: 100%;
-display: grid;
-gap: 20px; 
-grid-template-columns: repeat(3, 1fr );
-grid-template-rows: repeat(8, 1fr);
+:root {
+    --color-primario: #2f2cf8;
+    --color-secundario: #B72C2C;
+    --color-terciario: #D8AD3D;
+    --color-cuaternario: rgba(36, 39, 42, 1);
+    ;
+    ;
 }
 
-/* rgba(155, 138, 138, 0.256) */
+.contenedor {
+  width: 100%;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(3, auto);
+  grid-template-rows: repeat(6, auto);
+}
 
-    .contenedor .header{
-    background: linear-gradient(0deg, #FFFF 0%, #FFFFFF 32.22%, rgba(255, 255, 255, 0.71) 61.99%, rgba(255, 255, 255, 0.0729167) 93.72%, rgba(255, 255, 255, 0) 93.72%);
+@font-face {
+  font-family: 'Caveat';
+  src: url(./fonts/Caveat/Caveat-VariableFont_wght.ttf);
+
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url(./fonts/Open_Sans/OpenSans-VariableFont_wdth\,wght.ttf);
+}
+
+      /*? Encabezado y Nombre de Página */
+
+    .header {
+    /* border: #080a83 solid; */
     grid-column: 1/5;
-    grid-row: 1/3; 
-        
+    grid-row: 1/2;
     width: 100%;
-     height: 805px;}
+    height: 790px;
+    background: url(./assest/portada.png) no-repeat left top;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    flex-direction: column;
+    }
+
+        .header .grad {
+          /* background-color: #080a83; */
+        height: 32%;
+        width: 100%;
+        background: linear-gradient(
+            0deg,
+            #ffffff 0%,
+            #ffffff 32.22%,
+            rgba(255, 255, 255, 0.71) 61.99%,
+            rgba(255, 255, 255, 0.0729167) 93.72%,
+            rgba(255, 255, 255, 0) 93.72%); 
+
+        position: absolute;
+        top: 560px;
+        left: 0px;
+        margin: 0;
          
-            
-            /*Esto si lo hago con background*/
-            
-            /* background: url(./assest/portada.png), linear-gradient(0deg, #FFFFFF 0%, #FFFFFF 32.22%, rgba(255, 255, 255, 0.71) 61.99%, rgba(255, 255, 255, 0.0729167) 93.72%, rgba(255, 255, 255, 0) 93.72%);
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: top left;
-
-            background-blend-mode:multiply;  
-    }  */
-
-        .header .cont_img{
-        height: 80%;
-        width: 100vw;
-        } 
-            
-            .header .cont_img img{
-            height: 100%;
-            width: 100%;
-            object-fit: cover;
-            object-position: center;
-           
-            mix-blend-mode: overlay;
-            }
-               /* Con object position puedo colocar valores en x y en y */
-            
-
-
-                .header .gradiente{
-                height: 20%;
-                width: 100%;
-                background-color: blueviolet;
-                background: linear-gradient(0deg, #FFFFFF 0%, #FFFFFF 32.22%, rgba(255, 255, 255, 0.71) 61.99%, rgba(255, 255, 255, 0.0729167) 93.72%, rgba(255, 255, 255, 0) 93.72%);  
-                }
-
-        .contenedor .menu{
-            background-color: rgb(124, 233, 124);
-            grid-column: 0 / 2;
-            grid-row: 3 /6;
-
-        }  
-
-        .contenedor .articulo{
-            background-color: rgb(124, 131, 233);
-            grid-column: 2/ 5;
-            grid-row: 3/6;
-        }
-
-        .contenedor .formulario{
-            background-color: rgb(116, 89, 142);
-            grid-column: 1/5;
-            grid-row: 6/7;
-        }
+         
         
+        }
+
+        .header h1{
+          /* background: #2f2cf8;   */
+          width: 600px;
+          height: 40%;
+          position: relative;
+          z-index: 2;
+          /* padding: 300px ; */
+          margin: 200px 0 0  120px ;
+          /* top: 300px;
+          left: 120px; */
+
+          font-family: 'Caveat';
+          font-size: 130px;
+          text-align: left;
+          line-height: 90px;
+          letter-spacing: 0.03em;
+          color: var(--color-cuaternario);
+           }
+
+        .header .sub_img_princ{
+          position: relative;
+          z-index: 1;
+          /* top: 60px;
+          left: -500px; */
+
+          margin: -230px 0 auto -400px;
+        }
+/*  */
+        /*? -------Redes Sociales - Iconos-------*/
+
+        .contenedor_icons{
+          width: 246px;
+          height: 62px;
+          margin: 42px 20px 0px 1240px;
+
+          display: flex;
+          flex-direction: row;
+         
+        }
+
+          .icon{
+
+            width: 60px;
+            height: 60px;
+            padding: 15px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 3);
+           border: solid 3.5px;
+            margin: 0 20px 0 0;
+       
+          }
+
+          .icon_facebook{
+            fill: var(--color-primario);
+            border-color: var(--color-primario);
+          }
+
+          .icon_instagram{
+            fill: var(--color-secundario);
+            border-color: var(--color-secundario);
+
+            
+          }
+             
+          .icon_youtube{
+            fill: var(--color-terciario);
+            border-color: var(--color-terciario);
+          }
      
+
+        /*? -------Títulos-------*/
+
+        /*? Estructuración*/
+
+    .principal {
+          grid-column: 1/5;
+          grid-row: 2/3;
+          margin: 0;
+   }
+
+   
+   /*? ------Estilos------*/
+   
+   .titulos {
+     /* background-color: #080a83; */
+     
+     font-family: 'Caveat';
+     font-size: 50px;
+     font-weight: 700;
+     line-height: 38px;
+     
+     height: 100px;
+     width: 100%;
+     
+     margin: 0;
+     padding: 0;
+     
+     display: flex;
+     flex-direction: column;
+     
+     display: grid;
+     place-items: center; 
+    }
+    
+    .titulos h2{
+      margin: 0;
+      padding: 0;
+      
+      position: relative;
+      z-index: 2; 
+      
+    }
+    
+    .subrayado_img{
+
+      height: 85px;
+      width: 464px;
+      padding: 0;
+      margin: 0;
+      opacity: 30%;
+      position: relative;
+      top: -25px;
+      z-index: 1;
+      
+    }
+    
+    .subrayado_img img{
+      
+      width:100%;
+      height: 100%;
+
+      }
+      
+      /*?---------------Menu-----------------*/
+     
+      .contenedor .menu {
+
+        grid-column: 0 / 2;
+        grid-row: 3 / 5;
+
+        width: 274px;
+        height: 319px;
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 1);
+        box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.07);
+        margin: 20px 10px 0 145px;
+
+        font-family: 'Open Sans';
+        text-transform: uppercase;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 23px;
+        letter-spacing: 0.03em;
+        text-align: left;
+        color: #24272A;
+        }
+
+        .menu ul{
+              margin: 25px;
+              list-style: none;
+        }
+
+        .menu ul li{
+              padding: 0 0 25px 0;
+        }
+
+      /*?------Artículos-------*/
+      
+      .contenedor .articulo {
+        /* background-color: rgb(124, 131, 233); */
+        grid-column: 2/ 5;
+        grid-row: 3/5;
+        margin: 20px 120px 0px 10px;
+       
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+       }
+      
+        .articulo .contenedor_articulo{
+          width: 270px;
+          height: 438px;
+          border-radius: 10px;
+          margin: 0 40px 40px 0;
+          box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.07);
+          }
+      
+        .contenedor_articulo .contenedor_img{
+          width: 100%;
+          height: 45%;
+          }
+      
+        .contenedor_articulo .contenedor_img img{
+          width: 100%;
+          height: 100%;
+          border-radius: 10px 10px 0 0;
+          }
+
+        .contenedor_articulo .contenido_articulo{
+          width: 100%;
+          height: 55%;
+          padding: 30px;
+
+          font-family: 'Open Sans';
+          }
+
+        .contenido_articulo h3{
+         
+          font-size: 18px;
+          font-weight: 700;
+          line-height: 24px;
+          letter-spacing: 0.01em;
+          text-align: left;
+          padding: 0 0 15px 0;
+
+          color: rgba(63, 69, 74, 1);
+          color: #24272A
+        }
+
+        .contenido_articulo p{
+          
+          width: 100%;
+          height: 50%;
+
+          font-size: 14px;
+          font-weight: 400;
+          line-height: 24px;
+          letter-spacing: 0.01em;
+          text-align: left;
+          padding: 0 0 20px 0;
+
+          color: rgba(63, 69, 74, 1);
+          
+          /** Desbordamiento */
+          overflow: hidden;
+        }
+
+      /*? Segundo Título*/
+      
+      .tit_contacto{
+            /* background: #080a83; */
+            grid-column: 1/5;
+            grid-row: 5/6;
+            width: 100%;
+            margin: 30px 0 0px 0px;
+            /** De margen superior tiene un total de 70px,porque suma el margen inferior de los artículos, que es 40px*/
+          }
+
+      /*Formulario*/
+
+.contenedor .formulario {
+  /* background-color: rgb(116, 89, 142); */
+  grid-column: 1/5;
+  grid-row: 6/7;
+
+  width: 740px;
+  height: 178px;
+  font-family: 'Open Sans';
+
+  position: relative;
+  left:50%;
+  transform: translate(-50%);
+  margin: 0 0 80px 0;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+    .formulario .entrada_datos{
+    margin: 0 0 15px 0;
+    }
+
+   .formulario input{
+      height: 45px;
+      width: 360px;
+      border: 1px solid rgba(63, 69, 74, 0.4);
+      }
+
+    .formulario .datoInput{
+    text-transform: uppercase;
+    font-size: 12px;
+    line-height: 30px;
+    font-weight: 700;
+    text-align: left;
+    color: #24272A;
+
+    margin: 0 0 5px 0;
+    }
+
+    .formulario .btnEnviar{
+
+      /* background: #2f2cf8; */
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+
+    }
+
+    .formulario .enviar{
+      height: 50px;
+      width: 150px;
+      border-radius: 60px;
+      border: none;
+      
+
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #ffffff;
+      background: var(--color-terciario);
+
+    }
+
